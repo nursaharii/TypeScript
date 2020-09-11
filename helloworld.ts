@@ -30,8 +30,22 @@ let empObj:IEmployee = {
     gender:"Male",
     age: 15
 }
-empObj.age= "20"; //Üstte bunu readonly tanımladık o yüzden hata verir.
+//empObj.age= "20"; //Üstte bunu readonly tanımladık o yüzden hata verir.
 empObj.empCode= 2;
 empObj.name= "Sofi";
 empObj.gender = "Female";
 
+class Employee implements IEmployee{
+    empCode: number;
+    name: string;
+    gender: string;
+    age: number;
+    constructor(code: number, name: string){
+        this.empCode= code;
+        this.name= name;
+    }
+    getSalary(empCode: number):number{
+         return 20000;
+    }
+}
+let emp = new Employee(1,"Sofie");
